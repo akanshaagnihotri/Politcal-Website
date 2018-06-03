@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Politics</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js'></script>
+    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js'></script>
+    <script type="text/javascript" src="./JS/app.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body ng-app='PoliticsApp'>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Politics</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">main</a></li>
+                <li><a href="#!AddData">add</a></li>
+                <li><a href="#!ServerData">server</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div ng-controller='ParentCtrl as baap' id='parent'>
+        <h1>{{MyName}}</h1>
+        <div ng-controller='ChildCtrl as beta'>
+            <h3>Value in child is {{baap.MyName}} but value in Parent is {{beta.MyName}}</h3>
+        </div>   
+    </div>
+    <div ng-view>
+    </div>
+</body>
+
+</html>
